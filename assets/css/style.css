@@ -27,7 +27,7 @@
 }
 
 .concertlist{
-    margin-top: 5vh;
+    margin-top: 7vh;
 }
 
 #citybutton{
@@ -37,4 +37,8 @@
 #searchbutton{
     color: white;
     border-color: purple;
+}
+
+.card-specific{
+    margin-left: auto;
 }
