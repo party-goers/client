@@ -3,6 +3,9 @@
     height: 150px;
 } */
 
+.bar{
+    background-color:#121736 !important;
+}
 .jumbo{
     height: 80vh;
     margin: 3% 3%;
