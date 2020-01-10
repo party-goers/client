@@ -26,6 +26,9 @@
     left: 45vw;
 }
 
+.concertlist{
+    margin-top: 7vh;
+}
 
 #citybutton{
     background-color: purple;
@@ -34,4 +37,8 @@
 #searchbutton{
     color: white;
     border-color: purple;
+}
+
+.card-specific{
+    margin-left: auto;
 }

@@ -16,6 +16,7 @@
       integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- style css -->
@@ -47,10 +48,12 @@
           </li>
         </ul>
       <div class="form-inline afterlogin" >
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="cityname">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchbutton">Search</button>
+        <form onsubmit="getEventDetail(event)">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="cityname">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchbutton">Search</button>
+        </form>
       </div>
-      <a href="#" onclick="signOut();" style="color: purple;float:ri" id="signOut">Sign out</a>
+      <a href="#" onclick="signOut();" style="color: purple;margin-right: 100px;float: left;" id="signOut" class="ml-auto afterlogin">Sign out</a>
     </nav>
     <!-- ================nav bar==================== -->
 
@@ -82,7 +85,7 @@
     <div class="jumbotron jumbo jumbo-size">
       <h1 class="display-4" style="color: whitesmoke;">Party-Goers</h1>
       <h1 id="testweather"></h1>
-      <h2 class="lead" style="color: whitesmoke;">Experience the of a Lifetime</h2>
+      <h2 class="lead" style="color: whitesmoke;">Experience the party of a Lifetime</h2>
       <!-- <hr class="my-4"> -->
       <h2 style="color: whitesmoke;">Only the best events in your city</h2>
       <a class="btn btn-primary btn-lg getevents" href="#" role="button" id="citybutton">Jakarta</a>
@@ -95,11 +98,8 @@
     <div id="concertlist"></div>
     <!-- =================================setelah klik city button================================== -->
     <!-- =====================================setelah klik salah satu card konser===================================== -->
-    <div id="detaileventinfo">
-      <div class="jumbotron jumbo">
-        <iframe class="embed-responsive-item googlemap" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"  allowfullscreen></iframe>
-      </div>
-    </div>
+    <div id="detaileventinfo"></div>
+    <div id="errormessage"></div>
     <!-- =====================================setelah klik salah satu card konser===================================== -->
   </div>
   <!-- =============================main page=============================== -->
