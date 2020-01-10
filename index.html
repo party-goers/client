@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- style css -->
-    <link rel="stylesheet" href="./style.css"> 
+    <link rel="stylesheet" href="./assets/css/style.css"> 
 
     <!-- icon web -->
     <link rel='icon' href='https://www.twilio.com/docs/static/img/favicons/favicon.535a9293e.ico' type='image/x-icon'/ >
@@ -27,7 +27,7 @@
     <title>Party-Goers</title>
 </head>
 <body>
-    
+
   <div class="container" id="loginRegister">
     <article class="card-body mx-auto border p-3 shadow mt-5" style="max-width: 400px;border-radius: 10px;">
         <h4 class="card-title mt-3 text-center">Login</h4>
@@ -49,6 +49,52 @@
   </div>
     <a href="#" onclick="signOut();">Sign out</a>
 
+    <!-- ================nav bar==================== -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="#" style="margin-left: 20%;" id="homepage">Party-Goers</a>
+        <ul class="navbar-nav afterlogin" >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Suggested Cities
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" id="coachella" href="#">coachella</a>
+              <a class="dropdown-item" href="#">jakarta</a>
+              <a class="dropdown-item" href="#">london</a>
+              <a class="dropdown-item" href="#">bali</a>
+              <a class="dropdown-item" href="#">seoul</a>
+            </div>
+          </li>
+        </ul>
+      <div class="form-inline afterlogin" >
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="cityname">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchbutton">Search</button>
+      </div>
+    </nav>
+    <!-- ================nav bar==================== -->
+    <!-- =============================setelah login=============================== -->
+    <div class="jumbotron jumbo jumbo-size">
+      <h1 class="display-4" style="color: whitesmoke;">Party-Goers</h1>
+      <h1 id="testweather"></h1>
+      <h2 class="lead" style="color: whitesmoke;">Experience the of a Lifetime</h2>
+      <!-- <hr class="my-4"> -->
+      <h2 style="color: whitesmoke;">Only the best events in your city</h2>
+      <a class="btn btn-primary btn-lg getevents" href="#" role="button" id="citybutton">Jakarta</a>
+    </div>
+    <!-- =============================setelah login=============================== -->
+    <div class="spinner-border text-warning" role="status" style="display: none;">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <!-- =================================setelah klik city button================================== -->
+    <div id="concertlist"></div>
+    <!-- =================================setelah klik city button================================== -->
+    <!-- =====================================setelah klik salah satu card konser===================================== -->
+    <div id="detaileventinfo">
+      <div class="jumbotron jumbo">
+        <iframe class="embed-responsive-item googlemap" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"  allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- =====================================setelah klik salah satu card konser===================================== -->
      <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

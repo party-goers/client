@@ -1,0 +1,34 @@
+/* #concertlist{
+    overflow-y: scroll;
+    height: 150px;
+} */
+
+.jumbo{
+    height: 80vh;
+    margin: 3% 3%;
+}
+.jumbo-size{
+    background-image: url('../pictures/party3.jpg');
+    padding-left: 10%;
+    padding-top: 15%;
+}
+
+.googlemap{
+    width: 100%;
+    height: 100%;
+}
+.spinner-border{
+    position: relative;
+    top: 40vh;
+    left: 45vw;
+}
+
+
+#citybutton{
+    background-color: purple;
+    border: none;
+}
+#searchbutton{
+    color: white;
+    border-color: purple;
+}
