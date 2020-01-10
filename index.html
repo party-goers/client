@@ -22,12 +22,32 @@
     <link rel="stylesheet" href="./style.css"> 
 
     <!-- icon web -->
-    <link rel='icon' href='https://github.com/fluidicon.png' type='image/x-icon'/ >
+    <link rel='icon' href='https://www.twilio.com/docs/static/img/favicons/favicon.535a9293e.ico' type='image/x-icon'/ >
 
     <title>Party-Goers</title>
 </head>
 <body>
     
+  <div class="container" id="loginRegister">
+    <article class="card-body mx-auto border p-3 shadow mt-5" style="max-width: 400px;border-radius: 10px;">
+        <h4 class="card-title mt-3 text-center">Login</h4>
+        <p class="text-center">Get started with your free account</p>
+        <!-- google button -->
+        <p>
+                <div class="g-signin2" data-onsuccess="onSignIn" style="margin-left: 120px;"></div>
+        </p>
+        <p class="divider-text text-center">
+            OR
+        </p>
+        <!-- gitHub Button -->
+        <p>
+            <button id="github-button" class="btn btn-block btn-social btn-github border" style="margin-left: 85px;width: 200px;">
+                <i class="fa fa-github"></i> Sign in with Github
+              </button>
+        </p>
+    </article>
+  </div>
+    <a href="#" onclick="signOut();">Sign out</a>
 
      <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
