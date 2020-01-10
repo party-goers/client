@@ -22,36 +22,16 @@
     <link rel="stylesheet" href="./assets/css/style.css"> 
 
     <!-- icon web -->
+    <!-- <link rel='icon' href='https://www.twilio.com/docs/static/img/favicons/favicon.535a9293e.ico' type='image/x-icon'/ > -->
     <link rel='icon' href='https://www.twilio.com/docs/static/img/favicons/favicon.535a9293e.ico' type='image/x-icon'/ >
 
     <title>Party-Goers</title>
 </head>
 <body>
-
-  <div class="container" id="loginRegister">
-    <article class="card-body mx-auto border p-3 shadow mt-5" style="max-width: 400px;border-radius: 10px;">
-        <h4 class="card-title mt-3 text-center">Login</h4>
-        <p class="text-center">Get started with your free account</p>
-        <!-- google button -->
-        <p>
-                <div class="g-signin2" data-onsuccess="onSignIn" style="margin-left: 120px;"></div>
-        </p>
-        <p class="divider-text text-center">
-            OR
-        </p>
-        <!-- gitHub Button -->
-        <p>
-            <button id="github-button" class="btn btn-block btn-social btn-github border" style="margin-left: 85px;width: 200px;">
-                <i class="fa fa-github"></i> Sign in with Github
-              </button>
-        </p>
-    </article>
-  </div>
-    <a href="#" onclick="signOut();">Sign out</a>
-
     <!-- ================nav bar==================== -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#" style="margin-left: 20%;" id="homepage">Party-Goers</a>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark bar">
+      <!-- <a class="navbar-brand" href="#" style="margin-left: 20%;" id="homepage">Party-Goers</a> -->
+      <img src="assets/images/logo.png" style="margin-left: 20%;" id="homepage">
         <ul class="navbar-nav afterlogin" >
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,8 +50,34 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="cityname">
         <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchbutton">Search</button>
       </div>
+      <a href="#" onclick="signOut();" style="color: purple;float:ri" id="signOut">Sign out</a>
     </nav>
     <!-- ================nav bar==================== -->
+
+      <!-- ================login form==================== -->
+        <div class="container" id="loginRegister">
+          <article class="card-body mx-auto border p-3 shadow mt-5" style="max-width: 400px;border-radius: 10px;">
+              <h4 class="card-title mt-3 text-center">Login</h4>
+              <p class="text-center">Get started with your free account</p>
+              <!-- google button -->
+              <p>
+                      <div class="g-signin2" data-onsuccess="onSignIn" style="margin-left: 120px;"></div>
+              </p>
+              <p class="divider-text text-center">
+                  OR
+              </p>
+              <!-- gitHub Button -->
+              <p>
+                  <button id="github-button" class="btn btn-block btn-social btn-github border" style="margin-left: 85px;width: 200px;">
+                      <i class="fa fa-github"></i> Sign in with Github
+                    </button>
+              </p>
+          </article>
+        </div>
+      <!-- ================login form==================== -->
+
+  <!-- =============================main page=============================== -->    
+  <div id="main" style="display: none;">
     <!-- =============================setelah login=============================== -->
     <div class="jumbotron jumbo jumbo-size">
       <h1 class="display-4" style="color: whitesmoke;">Party-Goers</h1>
@@ -95,6 +101,8 @@
       </div>
     </div>
     <!-- =====================================setelah klik salah satu card konser===================================== -->
+  </div>
+  <!-- =============================main page=============================== --> 
      <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

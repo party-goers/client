@@ -1,5 +1,6 @@
 let allevents = null
 $(document).ready(function(){
+  cekStatus()
     // waktu berhasil login detaileventinfo, concertlist di hide
     $("#detaileventinfo").hide()
     $('#homepage').click(function(){
@@ -51,24 +52,38 @@ $(document).ready(function(){
     })
 })
 
+function cekStatus (){
+  if(localStorage.getItem('token')){
+    $("#main").show();
+    $("#loginRegister").hide();
+    $("#signOut").show();
+  }else{
+    $("#main").hide()
+    $("#loginRegister").show();
+    $("#signOut").hide();
+  }
+}
+
 function onSignIn(googleUser) {
     // // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     $.ajax({
         type: "post",
         url: "http://localhost:3000/users/googleSignIn",
-        data: {
+        headers: {
             id_token
         }
     })
     .done(respone=>{
-        console.log(respone)
+        localStorage.setItem('token', respone.token)
+        cekStatus()
     })
   }
 
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
+      localStorage.clear()
+      cekStatus()
     });
   }
