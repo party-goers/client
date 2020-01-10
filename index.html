@@ -47,8 +47,10 @@
           </li>
         </ul>
       <div class="form-inline afterlogin" >
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="cityname">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchbutton">Search</button>
+        <form onsubmit="getEventDetail(event)">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="cityname">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchbutton">Search</button>
+        </form>
       </div>
       <a href="#" onclick="signOut();" style="color: purple;float:ri" id="signOut">Sign out</a>
     </nav>
@@ -96,10 +98,8 @@
     <!-- =================================setelah klik city button================================== -->
     <!-- =====================================setelah klik salah satu card konser===================================== -->
     <div id="detaileventinfo">
-      <div class="jumbotron jumbo">
-        <iframe class="embed-responsive-item googlemap" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"  allowfullscreen></iframe>
-      </div>
     </div>
+    <div id="errormessage"></div>
     <!-- =====================================setelah klik salah satu card konser===================================== -->
   </div>
   <!-- =============================main page=============================== --> 
