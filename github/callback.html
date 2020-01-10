@@ -6,45 +6,22 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <p>redirecting in <span id="timer"></span></p>
+    <p id="message">redirecting in <span id="timer"></span></p>
     <script>
-      console.log(window.location.href, '<<< href')
-      console.log(window.location.hostname, '<<< hostname')
-      console.log(window.location.pathname, '<<< pathname')
-      console.log(window.location.protocol, '<<< protocl')
-
-      let token = window.location.href.split('%20')[1]
-      let email = window.location.href.split('%20')[2]
-
-      console.log(token)
-      console.log(email)
-
-      let timer = 5
-      setInterval(function() {
-        document.getElementById('timer').innerHTML = timer
-        if (timer > 0) timer --
-        else {
-          clearInterval(this)
-          localStorage.setItem('token', token)
-          localStorage.setItem('email', email)
+      let code = window.location.href.split('?code=')[1]
+      axios.post('http://localhost:3000/github/callback', {
+        code
+      })
+        .then(({ data }) => {
+          localStorage.setItem('token', data.access_token)
+          localStorage.setItem('email', data.email)
           window.location.href = 'http://localhost:8080'
-        }
-      }, 1000)
-
-      // let code = window.location.href.split('code=')[1]
-      //
-      // console.log(code, '<<<<<<<<<<<<<<<<<<<<<<<<<<<< code nya')
-
-      // axios.post(`http://localhost:3000/github/callback`, {
-      //   code
-      // })
-      //   .then(({ data }) => {
-      //     console.log(data)
-      //   })
-      //   .catch(err => {
-      //     if (err.response) console.log(err)
-      //     else console.log(err)
-      //   })
+        })
+        .catch(err => {
+          if (err.response) console.log(err)
+          else console.error(err)
+          document.getElementById('message').innerHTML = 'Error happend. <a href="http://localhost:8080">Back to homepage</a>'
+        })
     </script>
   </body>
 </html>
