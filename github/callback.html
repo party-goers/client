@@ -6,15 +6,16 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <p id="message">redirecting in <span id="timer"></span></p>
+    <p id="message">redirecting</p>
     <script>
       let code = window.location.href.split('?code=')[1]
       axios.post('http://localhost:3000/github/callback', {
         code
       })
         .then(({ data }) => {
-          localStorage.setItem('token', data.access_token)
+          localStorage.setItem('token', data.token)
           localStorage.setItem('email', data.email)
+          localStorage.setItem('username', data.username)
           window.location.href = 'http://localhost:8080'
         })
         .catch(err => {
