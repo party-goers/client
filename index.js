@@ -212,7 +212,7 @@ function getEventInfo(eventid){
                     $("#detaileventinfo").append(`
                         <div class="jumbotron jumbo" style="height:100%;background-color: plum;font-family: 'Comfortaa', cursive;font-weight: bold;">
                             <iframe width="100%" height="450" frameborder="0" style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=place_id:${placeId}&key=AIzaSyA1EayjiXa62AC9NBalP3wzjMUQfItjzhQ" allowfullscreen>
+                                src="https://www.google.com/maps/embed/v1/place?q=place_id:${placeId.placeId}&key=AIzaSyA1EayjiXa62AC9NBalP3wzjMUQfItjzhQ" allowfullscreen>
                             </iframe>
                             <h1>${event.displayName}</h1>
                             <h3>Weather Forecast: ${result.weather.weather[0].description}</h3>
